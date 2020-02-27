@@ -15,12 +15,11 @@ $query-> execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 if($query->rowCount() > 0)
 {
-$_SESSION['alogin']=$_POST['username'];
-echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+$_SESSION['primaryauth'] = $_POST['username'];
+//$_SESSION['alogin']=$_POST['username'];
+echo "<script type='text/javascript'> document.location = 'duo.php'; </script>";
 } else{
-  
   echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
-
 }
 
 }
@@ -36,7 +35,7 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	
+
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -75,7 +74,7 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
